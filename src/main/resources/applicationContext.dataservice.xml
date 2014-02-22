@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+  <bean id="fireflyMockDataSerices" class="com.tritl.firefly.service.impl.FireflyMockDataServicesImpl">
+    <property name="diseaseDao" ref="mockDiseaseDao" />
+    <property name="doctorDao" ref="mockDoctorDao" />
+    <property name="personDao" ref="mockPersonDao" />
+    <property name="insuranceDao" ref="mockInsuranceProviderDao" />
+   
+  </bean>
+
+  <bean id="mockDiseaseDao" class="com.tritl.firefly.dao.mock.impl.DiseaseDaoImpl">
+    <!-- collaborators and configuration for this bean go here -->
+  </bean>
+
+
+  <bean id="mockPersonDao" class="com.tritl.firefly.dao.mock.impl.PersonDaoImpl">
+    <!-- collaborators and configuration for this bean go here -->
+  </bean>
+
+  <bean id="mockDoctorDao" class="com.tritl.firefly.dao.mock.impl.DoctorDaoImpl">
+    <!-- collaborators and configuration for this bean go here -->
+  </bean>
+
+  <bean id="mockInsuranceProviderDao" class="com.tritl.firefly.dao.mock.impl.InsuranceProviderDaoImpl">
+    <!-- collaborators and configuration for this bean go here -->
+  </bean>
+
+  <!-- more bean definitions go here... -->
+
+</beans>
