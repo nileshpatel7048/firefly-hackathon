@@ -16,25 +16,25 @@
     <!-- Multiple Checkboxes -->
     <div class="control-group">
       <label class="control-label" for="checkboxes">Select all that apply</label>
-      <div class="controls">
-        <script>
+      <div class="controls" id="diseasesdiv">
+   		<script>
 
-	$.getJSON("http://"+window.location.host+"/fireflyrestservice/rest/diseases",function(result){
-	
-		var diseaseDivCont = $(".controls");
-		
-		$.each(result, function(key,val) {
-						
-			diseaseDivCont.append( "<label class='checkbox' for='checkboxes-" + key + "'>" );
-			diseaseDivCont.append( "<input type='checkbox' name='checkboxes' id='checkboxes-'"+key+ "' value='" + val.name + "'>" );
-			diseaseDivCont.append(val.name);
-			diseaseDivCont.append("</label>");
-			   
-		});
-			   
-	});
+			$.getJSON("http://"+window.location.host+"/fireflyrestservice/rest/diseases",function(result){
+			
+				var diseaseDivCont = $("#diseasesdiv");
+				
+				$.each(result, function(key,val) {
+								
+					diseaseDivCont.append( "<label class='checkbox' for='checkboxes-" + key + "'>" );
+					diseaseDivCont.append( "<input type='checkbox' name='checkboxes' id='checkboxes-'"+key+ "' value='" + val.name + "'>" );
+					diseaseDivCont.append(val.name);
+					diseaseDivCont.append("</label>");
+					   
+				});
+					   
+			});
   
-</script>
+		</script>
       </div>
           <!-- Button -->
     <div class="control-group">
