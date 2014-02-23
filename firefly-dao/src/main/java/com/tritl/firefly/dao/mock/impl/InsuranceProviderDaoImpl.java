@@ -17,8 +17,11 @@ public class InsuranceProviderDaoImpl implements InsuranceProviderDao {
 				"Kaiser");
 		InsuranceProvider InsuranceProvider2 = new InsuranceProvider(1,
 				"Blue Cross");
+		InsuranceProvider InsuranceProvider3 = new InsuranceProvider(2,
+				"Health Net");
 		InsuranceProviders.add(InsuranceProvider1);
 		InsuranceProviders.add(InsuranceProvider2);
+		InsuranceProviders.add(InsuranceProvider3);
 	}
 
 	// @Override
