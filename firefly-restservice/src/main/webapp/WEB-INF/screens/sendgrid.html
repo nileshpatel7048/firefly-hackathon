@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Firefly Evernote integration</title>
+</head>
+<body>
+<form id="fireflyform">
+Email To: <input type="text" id="to"><br>
+Subject: <input type="text" id="subject"><br> 
+<input type="submit" value="Submit">
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+	$("form#fireflyform").submit(function() {
+		
+		var sendgridjs_url = "http://firefly-send.herokuapp.com//send";
+		var sendgridjs_to = $("input#to").val();
+		var sendgridjs_subject = $("input#subject").val();
+		var sendgridjs_html = "<p>html of email here as a string</p>";
+
+		var email = {
+			to      : sendgridjs_to, 
+			subject : sendgridjs_subject,
+			html    : sendgridjs_html
+		  }
+		$.post(sendgridjs_url, email, function(response) {
+		alert('test');
+			if (response.success) {
+			  // redirect somewhere or something. up to you. the email was sent successfully.
+			} else {
+			  alert(response.error.message);
+			}
+		});
+		
+		return false;
+	});
+</script>
+</body>
+</html>

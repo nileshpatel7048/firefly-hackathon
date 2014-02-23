@@ -64,5 +64,12 @@ public class FireflyHomeController {
 		
 	}
 	
+	@RequestMapping(value="/user/sendmail",method = RequestMethod.POST)
+	public String getSendMail() {
+
+		
+		return "sendgrid";
+		
+	}
 
 }
