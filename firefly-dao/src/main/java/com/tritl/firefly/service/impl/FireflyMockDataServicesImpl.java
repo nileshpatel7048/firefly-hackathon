@@ -6,10 +6,12 @@ import com.tritl.firefly.dao.DiseasesDao;
 import com.tritl.firefly.dao.DoctorDao;
 import com.tritl.firefly.dao.InsuranceProviderDao;
 import com.tritl.firefly.dao.PersonDao;
+import com.tritl.firefly.dao.PlanDao;
 import com.tritl.firefly.model.Diseases;
 import com.tritl.firefly.model.Doctor;
 import com.tritl.firefly.model.InsuranceProvider;
 import com.tritl.firefly.model.Person;
+import com.tritl.firefly.model.Plan;
 import com.tritl.firefly.service.FireflyDataServices;
 
 public class FireflyMockDataServicesImpl implements FireflyDataServices {
@@ -17,6 +19,12 @@ public class FireflyMockDataServicesImpl implements FireflyDataServices {
 	private DiseasesDao diseaseDao;
 	private DoctorDao doctorDao;
 	private PersonDao personDao;
+	
+	private PlanDao planDao;
+	
+	public PlanDao getPlanDao() {
+		return planDao;
+	}
 	public DiseasesDao getDiseaseDao() {
 		return diseaseDao;
 	}
@@ -114,5 +122,11 @@ public class FireflyMockDataServicesImpl implements FireflyDataServices {
 	public void deletePerson(Person person) {
 		personDao.deletePerson(person);
 	}
+	
+	public List<Doctor> getPCPs(String zip,String hcprovider){ return doctorDao.getAllDoctors();}
+	   
+	public List<InsuranceProvider> getHCPRecommendList(String dob, String zip,String hcprovider,String[] diseases){return insuranceDao.getAllInsuranceProviders();}
+	
+	public Plan getHCPlanDetails(int providerId, int plan_id){ return planDao.getPlan(plan_id);}
 
 }
