@@ -56,7 +56,7 @@ public class FireflyHomeController {
 		
 	}
 	
-	@RequestMapping(value="/user/hcresults",method = RequestMethod.GET)
+	@RequestMapping(value="/user/hcresults",method = RequestMethod.POST)
 	public String getHCResults() {
 
 		
