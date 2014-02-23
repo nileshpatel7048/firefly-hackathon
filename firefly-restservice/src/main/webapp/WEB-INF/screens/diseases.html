@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/application.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -19,30 +20,24 @@
     <div class="control-group">
       <label class="control-label" for="checkboxes">Select all that apply</label>
       <div class="controls">
-        <label class="checkbox" for="checkboxes-0">
-          <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Lung Cancer">
-          Lung Cancer
-        </label>
-        <label class="checkbox" for="checkboxes-1">
-          <input type="checkbox" name="checkboxes" id="checkboxes-1" value="Breast Cancer">
-          Breast Cancer
-        </label>
-        <label class="checkbox" for="checkboxes-2">
-          <input type="checkbox" name="checkboxes" id="checkboxes-2" value="Prostate Cancer">
-          Prostate Cancer
-        </label>
-        <label class="checkbox" for="checkboxes-3">
-          <input type="checkbox" name="checkboxes" id="checkboxes-3" value="Other Cancer">
-          Other Cancer
-        </label>
-        <label class="checkbox" for="checkboxes-4">
-          <input type="checkbox" name="checkboxes" id="checkboxes-4" value="Diabetes">
-          Diabetes
-        </label>
-        <label class="checkbox" for="checkboxes-5">
-          <input type="checkbox" name="checkboxes" id="checkboxes-5" value="HIV/AIDS">
-          HIV/AIDS
-        </label>
+        <script>
+
+	$.getJSON("http://"+window.location.host+"/fireflyrestservice/rest/diseases",function(result){
+	
+		var diseaseDivCont = $(".controls");
+		
+		$.each(result, function(key,val) {
+						
+			diseaseDivCont.append( "<label class='checkbox' for='checkboxes-" + key + "'>" );
+			diseaseDivCont.append( "<input type='checkbox' name='checkboxes' id='checkboxes-'"+key+ "' value='" + val.name + "'>" );
+			diseaseDivCont.append(val.name);
+			diseaseDivCont.append("</label>");
+			   
+		});
+			   
+	});
+  
+</script>
       </div>
           <!-- Button -->
     <div class="control-group">
