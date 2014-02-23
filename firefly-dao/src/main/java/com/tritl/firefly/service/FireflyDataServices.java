@@ -6,6 +6,7 @@ import com.tritl.firefly.model.Diseases;
 import com.tritl.firefly.model.Doctor;
 import com.tritl.firefly.model.InsuranceProvider;
 import com.tritl.firefly.model.Person;
+import com.tritl.firefly.model.Plan;
 
 public interface FireflyDataServices {
 
@@ -40,5 +41,11 @@ public interface FireflyDataServices {
 	public void updatePerson(Person person);
 
 	public void deletePerson(Person person);
+	
+	public List<Doctor> getPCPs(String zip,String hcprovider);
+	   
+	public List<InsuranceProvider> getHCPRecommendList(String dob, String zip,String hcprovider,String[] diseases);
+	
+	public Plan getHCPlanDetails(int providerId, int plan_id);
 
 }

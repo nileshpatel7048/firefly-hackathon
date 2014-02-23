@@ -34,7 +34,9 @@ public class HCPRecommendController {
 			@RequestParam(value = "diseases") String[] diseases) {
 
 		
-		return fireflyDataService.getHCPRecommendList(dob, zip, provider, diseases);
+		//return fireflyDataService.getHCPRecommendList(dob, zip, provider, diseases);
+		
+		return null;
 		
 	}
 	
