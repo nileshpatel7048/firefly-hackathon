@@ -64,7 +64,7 @@ public class FireflyHomeController {
 		
 	}
 	
-	@RequestMapping(value="/user/sendmail",method = RequestMethod.POST)
+	@RequestMapping(value="/user/sendmail",method = RequestMethod.GET)
 	public String getSendMail() {
 
 		
