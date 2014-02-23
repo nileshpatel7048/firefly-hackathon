@@ -2,14 +2,30 @@
 <html>
 
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Firefly Evernote integration</title>
+<link rel="stylesheet" type="text/css" href="../../assets/stylesheets/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../../assets/stylesheets/application.css">
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 </head>
 <body>
+<p>&nbsp;</p>
 <form id="fireflyform">
-Email To: <input type="text" id="to"><br>
-Subject: <input type="text" id="subject"><br> 
+<div class="border-form-div" id="third_form">
+
+<div class="control-group">
+      <label class="control-label" for="dob">Email To:</label>
+      <div class="controls">
+        <input type="text" id="to"><br>
+
+      </div>
+    </div>
+
+
 <input type="submit" value="Submit">
+</div>
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>
@@ -17,7 +33,7 @@ Subject: <input type="text" id="subject"><br>
 		
 		var sendgridjs_url = "http://firefly-send.herokuapp.com//send";
 		var sendgridjs_to = $("input#to").val();
-		var sendgridjs_subject = $("input#subject").val();
+		var sendgridjs_subject = "Your Health Insurance quote";
 		var sendgridjs_html = "<p>html of email here as a string</p>";
 
 		var email = {
@@ -26,7 +42,7 @@ Subject: <input type="text" id="subject"><br>
 			html    : sendgridjs_html
 		  }
 		$.post(sendgridjs_url, email, function(response) {
-		alert('test');
+		
 			if (response.success) {
 			  // redirect somewhere or something. up to you. the email was sent successfully.
 			} else {
@@ -37,5 +53,6 @@ Subject: <input type="text" id="subject"><br>
 		return false;
 	});
 </script>
+
 </body>
 </html>
