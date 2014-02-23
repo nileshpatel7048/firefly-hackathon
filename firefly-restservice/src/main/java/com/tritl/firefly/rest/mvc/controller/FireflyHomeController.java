@@ -36,7 +36,7 @@ public class FireflyHomeController {
 	public String getHCPList() {
 
 		
-		return "hcplist";
+		return "hcps";
 		
 	}
 	
