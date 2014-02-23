@@ -41,7 +41,7 @@ public class FireflyHomeController {
 	}
 	
 	@RequestMapping(value="/user/diseases",method = RequestMethod.GET)
-	public String getDiseaselist() {
+	public String getDiseaselist(String dob, String zipcode) {
 
 		
 		return "diseases";
