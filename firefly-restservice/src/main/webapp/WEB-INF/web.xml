@@ -25,6 +25,10 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	
+	<welcome-file-list>  
+        <welcome-file>index.html</welcome-file>  
+    </welcome-file-list>  
+	
 <!-- 	<error-page> -->
 <!--     Missing login -->
 <!--     <error-code>404</error-code> -->
