@@ -24,6 +24,45 @@ public class FireflyHomeController {
 		
 	}
 	
+	@RequestMapping(value="/user/landing",method = RequestMethod.GET)
+	public String getIndex() {
+
+		
+		return "index";
+		
+	}
+	
+	@RequestMapping(value="/user/hcprovider",method = RequestMethod.GET)
+	public String getHCPList() {
+
+		
+		return "hcplist";
+		
+	}
+	
+	@RequestMapping(value="/user/diseases",method = RequestMethod.GET)
+	public String getDiseaselist() {
+
+		
+		return "diseases";
+		
+	}
+	
+	@RequestMapping(value="/user/hcpriorities",method = RequestMethod.GET)
+	public String getHCPriorities() {
+
+		
+		return "priorities";
+		
+	}
+	
+	@RequestMapping(value="/user/hcresults",method = RequestMethod.GET)
+	public String getHCResults() {
+
+		
+		return "hcresults";
+		
+	}
 	
 
 }
